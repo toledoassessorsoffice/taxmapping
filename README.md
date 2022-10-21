@@ -1,2 +1,2 @@
 # taxmapping
-Toledo City's Latest Digital Taxmapping Project by IbarraCereno
+Toledo City's Latest DigitizedTaxmapping Project by IbarraCereno
