@@ -356,6 +356,7 @@
 
       </div>
     </section><!-- End Team Section -->
+
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
       <div class="container" data-aos="fade-up">
@@ -395,31 +396,71 @@
 
           </div>
 
-          <div class="col-lg-8 mt-5 mt-lg-0">
+        <div class="container">
+    <div class="form">
+        <div class="col-md-8 offset-md-2">
+            <h1>Send Message</h1>
+            <div class="errors">
+                            </div>
+            <form method="POST" id="target" action="/el/webici">
+                <input type="hidden" name="_token" value="WzwzycGMhEsxxmTKZ3NumgzEQ8bjMEt7H1zcS0Ly">                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" class="form-control" required
+                                   value="">
+                        </div>
+                        <div class="col">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-control" required
+                                   value="">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" class="form-control" required
+                           value="">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" class="form-control" name="message" rows="8"
+                              required></textarea>
+                </div>
+                <div class="form-group">
+                    <div class="input-group input-group-lg">
+                        <div id="captcha">
+                            <div data-callback="submit" data-theme="dark" data-sitekey="6LdpKIMUAAAAAPH4XLcypBTMPsV7eTWZrznHCndM" class="g-recaptcha"></div>
+                            <script src="https://www.google.com/recaptcha/api.js?" async defer></script>
 
- <form action="https://formsubmit.co/el/webici" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-              </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+                <input type="hidden" value="" name="url">
+                <button type="submit" class="btn btn-lg btn-dark btn-block">Send Message</button>
             </form>
-          </div>
+        </div>
+    </div>
+    <div class="row backlink">
+        <div class="col-md-8 offset-md-2 text-center">
+            <p>You are using&nbsp; <a target="_blank"
+                                      href="https://formsubmit.co/email-link/?utm_source=formsubmit.co&utm_medium=email%20link&utm_campaign=submission%20page">
+                    <img height="35px" src="https://formsubmit.co/image/logo.png" alt="FormSubmit logo"></a></p>
+        </div>
+    </div>
+</div>
+<script>
+    function submit() {
+        $("#target").unbind('submit').submit()
+    }
+
+    $(document).ready(function () {
+        $('#target').on('submit', function (e) {
+            e.preventDefault();
+            $('#captcha').show();
+        });
+    });
+</script>
 
         </div>
 
